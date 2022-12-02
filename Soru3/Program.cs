@@ -11,26 +11,51 @@ namespace Soru3
     {
         static void Main(string[] args)
         {
-
+            
             Console.WriteLine("ADET GİRİNİZ");
-            int score = 0;
+            int[] score = new int[100];
+            int[] sort = new int[100];
             int scoreExtra = 0;
             int adet = int.Parse(Console.ReadLine());
             List<int> list = new List<int>();
+
             for (int i = 0; i < adet; i++)
             {
 
                 Console.WriteLine("Puanlarını gir");
 
-                score = int.Parse(Console.ReadLine());
-                list.Add(score);
-
-
+                score[i] = int.Parse(Console.ReadLine());
+                list.Add(score[i]);
             }
             list.Sort();
             list.Reverse();
+
+  
             list.ForEach(lst => Console.Write($" {lst} - "));
-            Console.WriteLine("  \n---------------------------------------------");
+            Console.WriteLine("  \n---------------------------------------------\n");
+
+            int[] deneme =  score;
+            int tutucu;
+            int sayac;
+            for (int i = 1; i < adet; i++)
+            {
+                sayac = 0;
+                for (int j = 0; j < adet; j++)
+                {
+                    
+                    if (deneme[i] == score[j])
+                    {
+                        sayac++;
+
+                        tutucu = deneme[i];
+
+                        Console.WriteLine($"{i} tane {tutucu}. var");
+
+                    }
+                }
+             
+               
+            }
             Console.WriteLine("Extra olarak kaç adet puan girmek istiyorsun?");
             int extraAdet = int.Parse(Console.ReadLine());
 
@@ -42,21 +67,11 @@ namespace Soru3
             }
             list.Sort();
             list.Reverse();
-            //list.ForEach(lst => Console.Write($" {list.IndexOf(lst)+1}. => {lst} "));
 
             Console.WriteLine("---------------SKORLAR--------------------");
-            int sayac = 0;
-            foreach (var lst in list)
-            {
-              
            
-                    sayac++;
-                    Console.Write($"{sayac}.=>{lst}  ");
 
-                
-            }
 
-            
         }
 
     }
