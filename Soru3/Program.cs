@@ -55,7 +55,6 @@ namespace Soru3
 
                 Console.WriteLine("---------------SKORLAR--------------------");
                 int sayac = 0;
-                int item;
 
                 int tutucu=0;
                 for (int i = 0; i < list.Count; i++)
